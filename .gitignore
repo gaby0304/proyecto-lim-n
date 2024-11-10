@@ -1,3 +1,5 @@
 mysql/mysql.sock
 mysql/
 vendor/
+datos/vendor/
+negocio/vendor/
