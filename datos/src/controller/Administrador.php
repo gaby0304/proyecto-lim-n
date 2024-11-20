@@ -50,4 +50,12 @@ class Administrador extends Persona {
             ->withStatus($res['status']);
 
     }
+
+
+
+    
+    function hi() {
+        return "Ola";
+    }
+
 }

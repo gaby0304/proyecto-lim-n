@@ -49,8 +49,45 @@ $app->group('/api',function(RouteCollectorProxy $api){
         $categories->delete('/{id}', categories::class . ':delete');
     });
   
+
+
+
+    $api->group('/comidas', function (RouteCollectorProxy $class) {
+        $class->get('/read[/{id}]', Comidas::class . ':read');
+        $class->delete('/{id}', Comidas::class . ':delete');
+        $class->get('/filtro/{nombre_comidas}', Comidas::class . ':filtro');
+        $class->put('/{id}',Comidas::class . ':update');
+        $class->post('', Comidas::class . ':create');
+    });
+
     
-  
+
+    $api->group('/plantas', function (RouteCollectorProxy $class) {
+        $class->get('/read[/{id}]', Plantas::class . ':read');
+        $class->delete('/{id}', Plantas::class . ':delete');
+        $class->get('/filtro/{nombre_plantas}', Plantas::class . ':filtro');
+        $class->put('/{id}',Plantas::class . ':update');
+        $class->post('', Plantas::class . ':create');
+    });
+    
+
+    $api->group('/restaurantes', function (RouteCollectorProxy $class) {
+        $class->get('/read[/{id}]', Restaurantes::class . ':read');
+        $class->delete('/{id}', Restaurantes::class . ':delete');
+        $class->get('/filtro/{nombre_restaurantes}', Restaurantes::class . ':filtro');
+        $class->put('/{id}',Restaurantes::class . ':update');
+        $class->post('', Restaurantes::class . ':create');
+    });
+
+
+
+
+
+
+
+
+
+
     
 
     

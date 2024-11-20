@@ -1,0 +1,147 @@
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(100deg, #b8d1e1, #e3eb7b, #96b60b);
+    padding: 0 2vw;
+    flex-direction: column; /* Asegura que todo esté alineado verticalmente */
+  }
+  
+  // Botón de regresar
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #07230b;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+
+  /* Estilos del card */
+  .card {
+    background-color: #fffefe;
+    border-radius: 12px;
+    width: 90vw;
+    max-width: 920px;
+    padding: 1vw;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    //display: flex;
+    //flex-direction: column;
+    gap: 5px;
+  }
+  
+  /* Encabezado dentro del card */
+  .Cabezera {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background-color: #07230b;
+    color: #ffface;
+    padding: 15px;
+    border-radius: 8px;
+    margin: -3.2vh 0 15px 0;
+    font-size: 1.9em;
+    margin-left: 250px;
+  }
+  
+  /* Información adicional */
+  #informacion {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: -111px;
+    margin-bottom: 10px;
+
+
+    
+    position: relative;
+    bottom: 52px;
+    font-weight: bolder;
+  }
+  
+  .usuarioMaker, .fechaPubli {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bolder;
+  }
+  
+  /* Nombre de la receta */
+  #nombre_comida {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+   // margin: 10px 0;
+   position: relative;
+   bottom: 72px;
+   text-align: center;
+   text-decoration: underline;
+   left: 20px;
+  }
+  
+  /* Área de texto para la descripción */
+  #descripcion_comida {
+    resize: none;
+    width: 80%;
+    max-width: 800px;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f0f8ff;
+   
+
+    position: relative;
+    bottom: 82px;
+    overflow-x: auto;
+
+  }
+  
+  #elaboracion {
+    resize: none;
+    width: 95%;
+    max-width: 570px;
+    height: 210px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f0f8ff;
+    margin-right: 390px;
+
+
+
+
+
+    position: relative;
+    bottom: 62px;
+    overflow-x: auto;
+  }
+
+
+  #imagen {
+    display: block;
+    width: 250px; /* Ancho fijo */
+    height: 250px; /* Alto fijo */
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 560px;
+    margin-top: -240PX;
+    object-fit: cover; /* Hace que la imagen se recorte para llenar el contenedor sin distorsionarse */
+  
+  
+    position: relative;
+    bottom: 52px;
+    left: 50px;
+}

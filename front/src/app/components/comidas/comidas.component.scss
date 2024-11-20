@@ -1,0 +1,342 @@
+// EL CONTAINER PADRE DE TODA LA HOJA
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(100deg, #b8d1e1, #e3eb7b, #96b60b);
+    overflow: hidden;
+    padding: 0 2vw;
+  }
+  
+  //CABEZERA DEL CARD (La que contiene el nombre del apartado por ejemplo recetas)
+  .Cabezera {
+    width: 25%;
+    max-width: 400px;
+    text-align: center;
+    background-color:#07230b;
+    color: #ffface;
+    padding: 15px;
+    border-radius: 8px;
+    margin: -3.2vh 0 15px 0;
+    font-size: 1.9em;
+    margin-left: 70px;
+  }
+  
+  // Contiene botón buscar, input de búsqueda y crear publicación
+  form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin-top: 3vh;
+    justify-content: center;
+  }
+  
+  // Esto es el input en donde se pone el nombre de lo que se busca en la barra de navegación
+  #TituloContenido {
+    border-color: #e3eb7b;
+    border-width: 3px;
+    width: 100%; 
+    max-width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    background: #e3eb7b;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+  }
+  
+
+  // Contenedor de publicaciones en cada moódulo (recetas, plantas, restaurantes)
+  .ContainerPublicaciones {
+    width: 100%;
+    max-width: 800px;
+    height: 425px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    gap: 11px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+   
+  // Color que recibe el container de publicaciones cuando se le pasa el mouse
+  .ContainerPublicaciones:hover{
+    background-color:#b8d1e1;
+    
+  }
+
+
+  
+  // container con btn de creacion publicacion, barra de busqueda y container de publicaciones
+  .card {
+    background-color:#fffefe;
+    border-radius: 12px;
+    width: 90vw;
+    max-width: 920px;
+    padding: 1vw;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // hover de container con btn de creacion publicacion, barra de busqueda y container de publicaciones
+ //.card:hover{
+    //background-color:#f0f8ffea;
+
+ //}
+  
+  // Publicaciones individuales
+  .post {
+   
+    //background: #000000;
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 10px 12px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    min-height: 300px; // Ajuste de altura mínima para evitar que se alargue demasiado
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    margin-left: 5%;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 12px 12px 12px rgba(1, 38, 45, 0.408);
+      background: linear-gradient(145deg, #ffffff, #ffffff);
+    }
+  }
+
+
+  .post{
+    background-color:#dbedfb;
+  }
+  
+  // fecha publicacion post
+  .fechaPubli {
+    margin: 5px 0;
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  //Creador de cada publicacion de cada post
+  .usuarioMaker {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+
+  // Nombre de cada publicacion de cada post
+  .nombrePublicacion {
+    text-decoration: underline;
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  // Esto lo hice para quitarle el texto subrayado a cada publicacion individual ya que todas las caracteristicas se subrayaban.
+  a {
+    text-decoration: none;
+  }
+  
+  // Descripcion corta de cada post
+  .descripcionCorta {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 80px;
+    border: none;
+    resize: none;
+    background-color: #f0f8ff; /* Fondo azul claro */
+    color: #1a1a1a; /* Texto oscuro */
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px;
+    overflow-wrap: break-word;
+    border-radius: 10px; /* Bordes más suaves */
+    font-weight: bold;
+    font-size: 1.1em; /* Texto más grande */
+    line-height: 1.5; /* Mejor espaciado entre líneas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    overflow-y: auto;
+  }
+  
+  // Config de cada post
+  .ImagenPublicacion {
+    width: 70%;
+    max-height: 240px; // Controla la altura máxima de la imagen para mantener un diseño compacto
+    object-fit: cover; // Ajusta la imagen para que se adapte al contenedor
+    border-radius: 12px;
+    border: 20px solid #07230b; 
+    margin-top: 10px;
+    margin-left: 15%;
+  }
+  
+  // Botones de creación de publicación y búsqueda
+  #btnCrearPublicacion{
+    font-size: 1em;
+    padding: 12px 19px;
+    border-radius: 8px;
+    background:#07230b;
+    font-weight: bold;
+    color: #ffface;
+    margin-right: 10px;
+    border: none; /* Quitar el borde */
+  }
+
+
+  // Boton de buscar del form de la barra de busqueda
+  #Buscar{
+    font-size: 1em;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background:#e3eb7b;
+    font-weight: bold;
+    color: #07230b;
+    border: none; 
+    margin-left: 5px;
+
+  }
+
+
+  
+  // Botón de regresar
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #07230b;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+
+
+// Configuraciones de paginación de las publicaciones
+
+  .paginacion {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    overflow-x: auto; 
+    width: 205px ;
+    scroll-behavior: smooth;
+    align-items: center;
+  }
+  
+  .paginacion button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #e7e6e6;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .paginacion button.active {
+    background-color: #b8d1e1;
+    //color: rgb(0, 0, 0);
+    font-weight: bolder;
+  }
+
+
+ 
+ 
+  // Altura de la barra de busqueda de paginacion
+  .paginacion::-webkit-scrollbar {
+    height: 12px; /* Altura de la barra de desplazamiento horizontal */
+  }
+  
+
+  
+  /* Color del barra de desplazamiento en paginación */
+  .paginacion::-webkit-scrollbar-thumb {
+    background-color: #c3c7ca;
+    border-radius: 2px;
+  }
+  
+  /* Color del thumb al pasar el mouse por encima dentro de .paginacion */
+  .paginacion::-webkit-scrollbar-thumb:hover {
+    background-color: #b8d1e1;
+  }
+  
+
+
+  .editaPublicacion {
+    background-color: #6487A2;
+    color: #ffface;
+    font-size: 22px;
+    border-radius: 8px;
+   // display: flex;
+   width: 10%;
+  }
+  
+
+
+  
+  // Ajustes adicionales para pantallas grandes (1440px en adelante)
+  @media (min-width: 1440px) {
+    .Cabezera {
+      font-size: 2em;
+    }
+  
+    .card {
+      width: 70vw;
+      max-width: 1200px;
+    }
+  
+    .post {
+      width: 80%;
+      max-width: 800px;
+      min-height: 320px; // Ajuste ligero de altura mínima en pantallas grandes
+    }
+  }
+  
+  // Ajustes para pantallas extra grandes (4K y superiores)
+  @media (min-width: 2500px) {
+    .Cabezera {
+      font-size: 3em;
+    }
+  
+    .card {
+      width: 50vw;
+      max-width: 1600px;
+      padding: 2vw;
+    }
+  
+    form, .ContainerPublicaciones {
+      width: 90%;
+    }
+  
+    .descripcionCorta {
+      font-size: 1.2em;
+    }
+  
+    #btnCrearPublicacion, #Buscar {
+      font-size: 1.2em;
+      padding: 10px 20px;
+    }
+  
+    .back-button {
+      font-size: 28px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+  

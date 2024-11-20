@@ -161,4 +161,55 @@ class categories{
             ->withHeader('Content-type','Application/json')
             ->withStatus($status);
     }
+
+
+    function getProcedures() {
+        // Consulta para obtener los procedimientos almacenados
+        $sql = "SELECT ROUTINE_NAME 
+                FROM information_schema.ROUTINES 
+                WHERE ROUTINE_SCHEMA = :db_name 
+                  AND ROUTINE_TYPE = 'PROCEDURE'";
+    
+        // Obtener la conexión desde el contenedor (suponiendo que 'bd' es tu conexión)
+        $con = $this->container->get('bd');
+        
+        // Preparar la consulta
+        $query = $con->prepare($sql);
+        
+        // Ejecutar la consulta pasando el nombre de la base de datos
+        $db_name = $this->container->get('settings')['database']['name'];  // O puedes obtener el nombre de la DB de la configuración
+        $query->execute(['db_name' => $db_name]);
+    
+        // Obtener los resultados
+        $procedures = $query->fetchAll();
+    
+        // Verificar si la consulta devuelve resultados
+        $status = $query->rowCount() > 0 ? 200 : 204;
+        
+        // Cerrar la conexión y la consulta
+        $query = null;
+        $con = null;
+    
+        // Enviar la respuesta como JSON
+        $response->getBody()->write(json_encode($procedures));
+    
+        return $response
+            ->withHeader('Content-type', 'Application/json')
+            ->withStatus($status);
+    }
+    
+
+    function hi($request, $response, $args) {
+        // Creamos una nueva instancia de Response
+        $response->getBody()->write("Ola");
+    
+        // Devolvemos el objeto Response
+        return $response;
+    }
+
+
+
+
+
+
 }

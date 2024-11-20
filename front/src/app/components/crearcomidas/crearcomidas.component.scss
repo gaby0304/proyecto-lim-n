@@ -1,0 +1,124 @@
+
+
+// container contenedor de todo
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(100deg, #b8d1e1, #e3eb7b, #96b60b);
+    overflow: hidden;
+    padding: 0 2vw;
+  }
+  
+  
+  //CABEZERA DEL CARD (La que contiene el nombre del apartado por ejemplo recetas)
+  .Cabezera {
+    width: 25%;
+    max-width: 200px;
+    text-align: center;
+    background-color: #07230b;
+    color: #ffface;
+    padding: 8px;
+    border-radius: 8px;
+    margin: -5vh 0 15px 0;
+    font-size: 1.5em;
+  }
+  
+  // Botón de regresar
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #07230b;
+    border: none;
+    border-radius: 50%;
+    color: #ffface;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  // Contenedor principal
+  .card {
+    background-color: #fffefe;
+    border-radius: 12px;
+    width: 60vw;
+    max-width: 620px;
+    padding: 1vw;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+ .card:hover{
+    background-color:#f0f8ff;
+
+ }
+
+
+  
+  // Estilo para el formulario
+  form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  // Campos de entrada
+  input,
+  select,
+  textarea,
+  button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #aeadad; // border del FORM
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    background: #f0f8ff;
+  }
+  
+  // Estilo para las áreas de texto
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    background: #f0f8ff;
+  }
+  
+  // Botones
+  button {
+    background-color: #f68f80;
+    color: #ffface;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+  }
+  
+  #crearPublicacion {
+    background-color: #07230b;
+    color: #ffface;
+    font-size: 18px;
+  }
+  
+  #crearPublicacion:hover {
+    background-color: #133118;
+
+  }
+  
+ // Para lo de validaciones
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }

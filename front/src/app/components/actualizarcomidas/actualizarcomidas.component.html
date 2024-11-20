@@ -1,0 +1,74 @@
+<div class="container">
+    <button class="back-button" (click)="goBack()">←</button>
+  
+    <div class="card">
+      <h2 class="Cabezera">Actualizar publicación</h2>
+     
+      <button  id="imagenActual" (click)="MuestraImagen()">📸</button>
+
+      <div *ngIf="mostrarImagen">
+        <img [src]="publicacion.imagen" alt="Imagen de referencia" width="200" height="200" />
+      </div>
+      
+      <form #formulario="ngForm" (ngSubmit)="guardarCambios(formulario)">
+        <input
+          type="text"
+          id="tituloPublicacion"
+          placeholder="Título de publicación"
+          [(ngModel)]="publicacion.nombre_comida"
+          name="nombre_comida"
+          #nombreComida="ngModel"
+          required
+          minlength="1"
+        />
+        <div *ngIf="nombreComida.invalid && nombreComida.touched" class="error">
+          El título es obligatorio y debe tener al menos un carácter.
+        </div>
+  
+        <textarea
+          id="Descripcioncorta"
+          placeholder="Descripción corta"
+          [(ngModel)]="publicacion.descripcion_comida"
+          name="descripcion_comida"
+          #descripcionComida="ngModel"
+          required
+          minlength="10"
+        ></textarea>
+        <div *ngIf="descripcionComida.invalid && descripcionComida.touched" class="error">
+          La descripción es obligatoria y debe tener al menos 10 caracteres.
+        </div>
+  
+        <textarea
+          id="idProcesos"
+          placeholder="Proceso de preparación o datos específicos a resaltar"
+          [(ngModel)]="publicacion.elaboracion"
+          name="elaboracion"
+          #elaboracion="ngModel"
+          required
+        ></textarea>
+        <div *ngIf="elaboracion.invalid && elaboracion.touched" class="error">
+          El proceso de elaboración es obligatorio.
+        </div>
+  
+        <input
+          type="url"
+          id="idLinkImagen"
+          placeholder="URL de imagen de referencia"
+          [(ngModel)]="publicacion.imagen"
+          name="imagen"
+          #imagen="ngModel"
+          required
+        />
+        <div *ngIf="imagen.invalid && imagen.touched" class="error">
+          La URL de la imagen es obligatoria y debe ser válida.
+        </div>
+         
+        <button type="submit" id="guardarCambios">Guardar cambios</button>
+      </form>
+      
+      
+   
+
+    </div>
+  </div>
+  

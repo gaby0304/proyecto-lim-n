@@ -1,0 +1,51 @@
+<div class="container">
+    <button class="back-button" (click)="goBack()">←</button>
+  
+    <div class="card">
+      <h2 class="Cabezera">Recetas</h2>
+      <div class="DescripcionApartado">
+        <h3>Un espacio dedicado a compartir platillos típicos de la cultura afrodescendiente.</h3>
+      </div>
+  
+      <form (ngSubmit)="onSearch()">
+        <button type="button" id="btnCrearPublicacion" [routerLink]="'/crearComida'">Crear publicación</button>
+        <input
+          type="text"
+          id="TituloContenido"
+          placeholder="Título de publicación"
+          [(ngModel)]="titulo"
+          (input)="onInputChange()"
+          name="titulo"
+          required
+        >
+        <button type="submit" id="Buscar">{{ textoBoton }}</button>
+      </form>
+  
+      <div class="ContainerPublicaciones">
+        <a *ngFor="let publicacion of publicacionesFiltradas" (click)="haciaPublicacionEspecifica($event,publicacion.idComida)"  style="display: block;">
+          <div class="post">
+            <!-- Botón de editar que ejecuta la función hola() -->
+            <button class="editaPublicacion" (click)="EditarPublicacion($event,publicacion.idComida)">✎</button>
+            
+            <!-- Contenido de la publicación -->
+            <h3 class="fechaPubli">{{ publicacion.fecha }}</h3>
+            <h3 class="usuarioMaker">{{ publicacion.usuario }}</h3>
+            <p class="nombrePublicacion"><strong>{{ publicacion.nombre }}</strong></p>
+            <textarea class="descripcionCorta" readonly>{{ publicacion.descripcion }}</textarea>
+            <img *ngIf="publicacion.imagenUrl" [src]="publicacion.imagenUrl" alt="{{ publicacion.nombre }}" class="ImagenPublicacion" />
+          </div>
+        </a>
+      </div>
+  
+      <div class="paginacion">
+        <button
+          *ngFor="let numero of totalPaginas; let i = index"
+          [class.active]="i + 1 === paginaActual"
+          (click)="cambiarPagina(i + 1)"
+        >
+          {{ i + 1 }}
+        </button>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>

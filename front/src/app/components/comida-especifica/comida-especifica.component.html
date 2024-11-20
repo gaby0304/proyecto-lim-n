@@ -1,0 +1,20 @@
+<div class="container">
+    <button class="back-button" (click)="goBack()">←</button>
+  
+    <div class="card" *ngIf="comidaEspecifica">
+      <h2 class="Cabezera">Recetas</h2>
+  
+      <div id="informacion">
+        <h3 class="usuarioMaker">{{ comidaEspecifica.usuario_id }}</h3>
+        <h3 class="fechaPubli">{{ comidaEspecifica.fecha_creacion}}</h3>
+      </div>
+  
+      <h2 id="nombre_comida">{{ comidaEspecifica.nombre_comida }}</h2>
+  
+      <textarea id="descripcion_comida" placeholder="Escribe aquí la descripción" readonly>{{ comidaEspecifica.descripcion_comida }}</textarea>
+  
+      <textarea id="elaboracion" placeholder="Escribe aquí el proceso" readonly>{{ comidaEspecifica.elaboracion }}</textarea>
+  
+      <img id="imagen" [src]="comidaEspecifica.imagen" alt="Imagen de la receta" />
+    </div>
+  </div>
