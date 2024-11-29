@@ -263,33 +263,3 @@ body {
     }
   }
 }
-
-.custom-button {
-  border: 2px solid #90EE90;
-  /* Verde claro */
-  border-radius: 8px;
-  /* Bordes redondeados */
-  background-color: white;
-  /* Fondo blanco */
-  color: #006400;
-  /* Texto verde oscuro */
-  font-size: 16px;
-  /* Tamaño de fuente */
-  padding: 10px 20px;
-  /* Espaciado interno */
-  cursor: pointer;
-  /* Manita al pasar el cursor */
-  box-shadow: 0 4px 8px rgba(144, 238, 144, 0.4);
-  /* Sombra verde claro */
-  transition: all 0.3s ease;
-  /* Transición para suavizar cambios */
-}
-
-.custom-button:hover {
-  background-color: #90EE90;
-  /* Fondo verde claro al pasar el mouse */
-  color: white;
-  /* Texto blanco */
-  box-shadow: 0 6px 12px rgba(144, 238, 144, 0.6);
-  /* Sombra más intensa */
-}

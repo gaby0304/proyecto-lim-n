@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { RemarkComponent } from '../remark/remark.component';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
@@ -13,18 +11,9 @@ import { AuthService } from '../../shared/services/auth.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit, OnDestroy {
-  constructor(private router: Router, private dialog: MatDialog, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
-  publicacionId: string = "Index";
   isLoggedIn = false;
-
-  openRemarkDialog(publicacionId: string): void {
-    this.dialog.open(RemarkComponent, {
-      data: { pageId: publicacionId },
-      width: '600px',
-      height: '400px',
-    });
-  }
   
   images = [
     'assets/images/image1.jpg',
